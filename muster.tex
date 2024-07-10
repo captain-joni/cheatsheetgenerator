@@ -1,0 +1,1360 @@
+% Präambel
+%
+% Wenn du das Lesen solltest: Folg mir doch auf Insta: captain__joni 
+% Wenn dir das Cheatsheet geholfen hat kannst du dich bedanken indem du mir ein Lächeln schenkst oder mich auf nen Tee oder so einlädst ;)
+%
+
+
+
+\documentclass[6pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+%\usepackage{MnSymbol}
+\usepackage{graphicx,float}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{scalerel}
+\usepackage{mathabx}
+
+
+\DeclareMathSizes{6}{6}{4}{2}
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.2in,left=.1in,right=.1in,bottom=.1in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=0.4cm,right=0.4cm,bottom=0.4cm} }
+		{\geometry{top=1cm,left=0.4cm,right=0.4cm,bottom=0.4cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{10pt}
+  \setlength\belowdisplayskip{10pt}
+  \setlength\abovedisplayshortskip{10pt}
+  \setlength\belowdisplayshortskip{10pt}
+}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+%\usepackage{sectsty}
+%\sectionfont{\fontsize{9}{0.2}\selectfont}
+%\subsectionfont{\fontsize{7}{0.2}\selectfont}
+\title{Quick Guide to LA}
+
+\begin{document}
+
+\raggedright
+%\footnotesize
+\tiny
+
+
+\begin{center}
+     \Large{\textbf{A quick guide to Linear Algebra 2}} \\
+\end{center}
+\begin{multicols}{5}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+
+%----------------
+%--------------Varaibeln---------------------
+%-----------------
+
+
+%\newcommand{\kapitel1}{ersterwert}
+\newcommand{\kapitela}{eins}
+\newcommand{\kapitelb}{zwei}
+\newcommand{\kapitelc}{drei}
+\newcommand{\kapiteld}{vier}
+\newcommand{\kapitele}{fünf}
+\newcommand{\kapitellf}{sechs}
+\newcommand{\kapitelg}{sieben}
+\newcommand{\kapitelh}{acht}
+\newcommand{\kapiteli}{neun}
+\newcommand{\kapitelj}{zehn}
+\newcommand{\kapitelk}{elf}
+\newcommand{\kapitell}{zwölf}
+\newcommand{\kapitelm}{dreizehn}
+\newcommand{\kapiteln}{vierzehn}
+\newcommand{\kapitelo}{fünfzehn}
+\newcommand{\kapitelp}{sechszehn}
+\newcommand{\kapitelq}{siebzehn}
+\newcommand{\kapitelr}{achtzehn}
+\newcommand{\kapitels}{neunzehn}
+\newcommand{\kapitelt}{zwanzig}
+\newcommand{\kapitelu}{einundzwanzig}
+\newcommand{\kapitelv}{zweiundzwanzig}
+\newcommand{\kapitelw}{dreiundzwanzig}
+\newcommand{\kapitelx}{vierundzwanzig}
+\newcommand{\kapitely}{fünfundzwandig}
+\newcommand{\kapitelz}{sechsundzwanzig}
+\newcommand{\kapitelaa}{siebenundzwanzig}
+\newcommand{\kapitelab}{achtundzwanzig}
+\newcommand{\kapitelac}{neunundzwanzig}
+\newcommand{\kapitelad}{dreißig}
+\newcommand{\kapitelae}{einunddreißig}
+\newcommand{\kapitelaf}{zweiunddreißig}
+\newcommand{\kapitelag}{dreiundreißig}
+\newcommand{\kapitelah}{vierunddreißig}
+\newcommand{\kapitelai}{fünfunddreißig}
+\newcommand{\kapitelaj}{sechsunddreißig}
+\newcommand{\kapitelak}{siebenunddreißig}
+\newcommand{\kapitelal}{achtunddreißig}
+\newcommand{\kapitelam}{neununddreißig}
+\newcommand{\kapitelan}{vierzig}
+\newcommand{\kapitelao}{einundvierzig}
+\newcommand{\kapitelap}{zweiundvierzig}
+\newcommand{\kapitelaq}{dreiundvierzig}
+\newcommand{\kapitelar}{vierundvierzig}
+\newcommand{\kapitelas}{fünfundvierzig}
+\newcommand{\kapitelat}{sechsundvierzig}
+\newcommand{\kapitelau}{siebenundvierzig}
+\newcommand{\kapitelav}{achtundvierzig}
+\newcommand{\kapitelaw}{neunundvierzig}
+\newcommand{\kapitelax}{fünfzig}
+\newcommand{\kapitelay}{einundfünfzig}
+\newcommand{\kapitelaz}{zweiundfünfzig}
+\newcommand{\kapitelba}{dreiundfünfzig}
+\newcommand{\kapitelbb}{vierundfünfzig}
+\newcommand{\kapitelbc}{fünfundfünfzig}
+\newcommand{\kapitelbd}{sechsundfünfzig}
+\newcommand{\kapitelbe}{siebenundfünfzig}
+\newcommand{\kapitelbf}{achtundfünfzig}
+\newcommand{\kapitelbg}{neunundfünfzig}
+\newcommand{\kapitelbh}{sechzig}
+\newcommand{\kapitelbi}{einundsechzig}
+\newcommand{\kapitelbj}{zweiundsechzig}
+\newcommand{\kapitelbk}{dreiundsechzig}
+\newcommand{\kapitelbl}{vierundsechzig}
+\newcommand{\kapitelbm}{fünfundsechzig}
+\newcommand{\kapitelbn}{sechsundsechzig}
+\newcommand{\kapitelbo}{siebenundsechzig}
+\newcommand{\kapitelbp}{achtundsechzig}
+\newcommand{\kapitelbq}{neunundsechzig}
+\newcommand{\kapitelbr}{siebzig}
+\newcommand{\kapitelbs}{einundsiebzig}
+\newcommand{\kapitelbt}{zweiundsiebzig}
+\newcommand{\kapitelbu}{dreiundsiebzig}
+\newcommand{\kapitelbv}{vierundsiebzig}
+\newcommand{\kapitelbw}{fünfundsiebzig}
+\newcommand{\kapitelbx}{sechsundsiebzig}
+\newcommand{\kapitelby}{siebenundsiebzig}
+\newcommand{\kapitelbz}{achtundsiebzig}
+\newcommand{\kapitelca}{neunundsiebzig}
+\newcommand{\kapitelcb}{achtzig}
+\newcommand{\kapitelcc}{einundachtzig}
+\newcommand{\kapitelcd}{zweiundachtzig}
+\newcommand{\kapitelce}{dreiundachtzig}
+\newcommand{\kapitelcf}{vierundachtzig}
+\newcommand{\kapitelcg}{fünfundachtzig}
+\newcommand{\kapitelch}{sechsundachtzig}
+\newcommand{\kapitelci}{siebenundachtzig}
+\newcommand{\kapitelcj}{achtundachtzig}
+\newcommand{\kapitelck}{neunundachtzig}
+\newcommand{\kapitelcl}{neunzig}
+\newcommand{\kapitelcm}{einundneunzig}
+\newcommand{\kapitelcn}{zweiundneunzig}
+\newcommand{\kapitelco}{dreiundneunzig}
+\newcommand{\kapitelcp}{vierundneunzig}
+\newcommand{\kapitelcq}{fünfundneunzig}
+\newcommand{\kapitelcr}{sechsundneunzig}
+\newcommand{\kapitelcs}{siebenundneunzig}
+\newcommand{\kapitelct}{achtundneunzig}
+\newcommand{\kapitelcu}{neunundneunzig}
+\newcommand{\kapitelcv}{einhundert}
+\newcommand{\kapitelcw}{einhunderteins}
+\newcommand{\kapitelcx}{einhundertzwei}
+\newcommand{\kapitelcy}{einhundertdrei}
+\newcommand{\kapitelcz}{einhundertvier}
+\newcommand{\kapitelda}{einhundertfünf}
+\newcommand{\kapiteldb}{einhundertsechs}
+\newcommand{\kapiteldc}{einhundertsieben}
+\newcommand{\kapiteldd}{einhundertacht}
+\newcommand{\kapitelde}{einhundertneun}
+\newcommand{\kapiteldf}{einhundertzehn}
+\newcommand{\kapiteldg}{einhundertelf}
+\newcommand{\kapiteldh}{einhundertzwölf}
+\newcommand{\kapiteldi}{einhundertdreizehn}
+\newcommand{\kapiteldj}{einhundertvierzehn}
+\newcommand{\kapiteldk}{einhundertfünfzehn}
+\newcommand{\kapiteldl}{einhundertsechzehn}
+
+
+
+
+%-------------------------------------------------
+
+
+\ifthenelse{\equal{\kapitela}{2}}{
+
+\textbf{Transformatrix}\par
+Sei V ein K-V-Raum mit Dimension $n \in \mathbb{N}_0$ und den Basen B und $\widehat{B}$\par
+$\hookrightarrow \mathcal{T}^{ B_v}_{ \widehat{B}_v} = \mathcal{M}^{B_v}_{\widehat{B}_v}(id_V) \in K^{n \times n}$ \par
+}{}
+%-------------
+\ifthenelse{\equal{\kapitelb}{2}}{
+\textbf{Eigenschaften} \par
+$\hookrightarrow$ Ist $x \in K^n$ Koordinatenvektor von $v \in V$ bzgl. $B_v$, dann ist es $\widehat{x}= \mathcal{T}^{B_v}_{\widehat{B}_v} \ x $ bzgl. $\widehat{B}_v$ \par
+$\hookrightarrow \mathcal{T}^{B_v}_{\widehat{B}_v} \in K^{n \times n}$ ist invertierbar. \par
+$\hookrightarrow (\mathcal{T}^{B_v}_{\widehat{B}_v})^{-1} = \mathcal{T}^{\widehat{B}_v}_{B_v}$ \par
+$\hookrightarrow$ Lin. Abbildung von $\mathcal{T}^{B_v}_{\widehat{B}_v}$ ist $\Phi^{-1}_{\widehat{B}_v} \circ \Phi_{B_v} \in Aut(K^n)$ \par
+Im Fall $V = K^n$ gilt: \par 
+$\mathcal{T}^{B_v}_{\widehat{B}_v} = (\widehat{B}_v)^{-1}B_v$ (Die Basen als Matritzen geschrieben). \par
+Wenn sogar Standartbasen: \par
+$ \hookrightarrow \mathcal{T}^{B_v}_{(e_1,...,e_n)} = B_v$ \par
+$ \hookrightarrow \mathcal{T}^{(e_1,...,e_n)}_{\widehat{B}_v} = (\widehat{B}_v)^{-1}$ \par
+}{}
+%------------------------------
+\ifthenelse{\equal{\kapitelc}{2}}{
+\textbf{Basiswechsel in V und W} \par
+Gegeben haste schon $\mathcal{M}^{B_v}_{B_w}(f)$ für Homomorph. $f: V \to W$, jetzt änderst du die Basis von V und W. $\widehat{B}$ heißt neue Basis. \par
+$\mathcal{M}^{\widehat{B}_v}_{\widehat{B}_w}(f) = \mathcal{T}^{B_w}_{\widehat{B}_w} \ \mathcal{M}^{B_v}_{B_v} \ \mathcal{T}^{\widehat{B}_v}_{B_v}$
+}{}
+%-------------------------
+
+\ifthenelse{\equal{\kapiteld}{2}}{
+\textbf{Äquivalente Matrizen} \par
+A und $\widehat{A} \in K^{n \times m}$ ($n,m \in \mathbb{N}_0$) sind äquivalent, wenns invertierbare $S \in K^{n \times n}$ und $T \in K^{m \times m}$ gibt, sodass:
+$\widehat{A} = S \ A \ T^{-1}$ \par 
+mit $S = \mathcal{T}^{B_w}_{\widehat{B}_w}$ und $T^{-1} = \mathcal{T}^{\widehat{B}_v}_{B_v}$ \par 
+$\to$ Die Äquivalenz von Matrizen ist eine Äquivalenzrelation auf $K^{n \times m}$ \par
+Es ist äquivalent: \par
+$\hookrightarrow$ A und $\widehat{A}$ sind äquivalent.\par
+$\hookrightarrow \widehat{A}$ ist Darstellungsmatrix eines lin. Hom $f: V \to W$ mit geeigneten Basen: $\widehat{B}_v, \widehat{B}_w$ \par
+$\hookrightarrow$ Rang(A) = Rang($\widehat{A}$) \par
+}{}
+%------------------
+\ifthenelse{\equal{\kapitele}{2}}{
+\textbf{Rang-Normalform} \par
+Sei $A \in K^{n \times m}$ und Rang(A)=r, dann existiren invertierbare $S \in K^{n \times n}$ und $T \in K^{m \times m}$, sodass: \par
+$SAT^{-1} = \left[
+\begin{tabular}{c|c}
+   $I_r$  & 0 \\ \hline
+    0 & 0
+\end{tabular}
+\right]
+\in K^{n \times m}$ \par
+Diese Matrix mit der Einheitsmatrix oben links und sonst nur Nullzeilen/spalten heißt Rang-Normalform von A.
+}{}
+%--------------
+\ifthenelse{\equal{\kapitellf}{2}}{
+\textbf{Transformatritzen für Endomorphismen}
+$B_v $und$ \widehat{B}_v $ sind Basen von V: \par
+$\mathcal{M}^{\widehat{B}_v}_{\widehat{B}_v}(f) = \mathcal{T}^{B_v}_{\widehat{B}_v} \ \mathcal{M}^{B_v}_{B_v}(f) \ \mathcal{T}^{\widehat{B}_v}_{B_v}$ \par
+}{}
+%---------
+\ifthenelse{\equal{\kapitelg}{2}}{
+\textbf{Ähnlichkeit von Matrizen}\par
+$A $und$ \widehat{A} \in K^{n \times n}$ ($n \in \mathbb{N}_0$) heißen ähnlich, wenns invertierbare $T \in K^{n \times n}$ gibt, sodass: \par
+$\widehat{A} = T \ A \ T^{-1}$ \par 
+$\to$ Ähnlichkeit ist auch Äquivalenzrelation auf $K^{n \times n}$ \par
+Es ist äquivalent: \par
+$\hookrightarrow$ A und $\widehat{A}$ sind ähnlich. \par
+$\hookrightarrow \widehat{A}$ ist Darstellungsmatrix von Endo f bzgl. einer geeigneten Basis $\widehat{B}_v$ \par
+}{}
+%---------------
+\ifthenelse{\equal{\kapitelh}{2}}{
+\textbf{Invariante Unterräume} \par
+Sei V ein K-V-Raum, $f: V\to V$ ein Endo. Unterraum $U \subseteq V$ heißt f-invarianter Unterraum wenn: \par
+$f(U) \subseteq U$ \par
+Also werden Vektoren in U durch f wieder auf Vektoren in U abgebildet. Gleiches gilt für Matritzen.\par
+}{}
+%---------------
+\ifthenelse{\equal{\kapiteli}{2}}{
+\textbf{Eigenvektoren} \par
+Sei V über K und $f: V \to V$ ein Endo. $v \in V \setminus \{0\} $ ist Eigenvektor mit Eigenwert $\lambda$ wenn: \par
+$f(v)= \lambda v$ \par
+Bei Matritzen: \par
+$Ax = \lambda x$ \par
+Wenn A die Darstellungsmatrx eines ENDO f ist, dann ist $\lambda$ der Eigenwert von f und von A. (Also  v ist Eigenvektor mit $\lambda$, dann ist seine Koordinatendarstellung $\Phi^{-1}_{B_v}(v))$ auch Eigenvektor von A mit $\lambda$. \par
+$\to$ Ähnliche Matritzen haben dieselben Eigenwerte. (Dieselben Eigenwerte heißt aber nicht umbedingt ähnliche Matrizen) \par
+}{}
+%------------
+\ifthenelse{\equal{\kapitelj}{2}}{
+\textbf{Berechnung von Eigenwerten} \par
+$det(A- \lambda I)$\par
+$\to$ daraus ergibt sich ein Polynom mit $\lambda$, davon bestimmen wir die Nullstellen, diese sind dann die Eigenwerte. Eigenvektoren ergeben sich daraus $\lambda$ in $\widehat{A}=A- \lambda I$ einzusetzen und dann $\widehat{A}x = 0$ zu lösen. (Es können zu einem Eigenwert auch mehrdimensionale Unterräume auftretten). \par
+}{}
+%-----------------------
+\ifthenelse{\equal{\kapitelk}{2}}{
+\textbf{Diagonalisierte Matrix} \par
+Die Matrix mit den Eigenwerten auf der Hauptdiagonalen ist die Diagonalisierte Matrix von A (Def. $A \in K^{n \times n}$ heißt diagonalisierbar, wenn sie ähnlich zu einer Diagonalmatrix ist.)\par
+Sei V endlich dimensiol, f ein Endo und A die Matrix zu f, dann ist gleich: \par
+$\hookrightarrow$ f ist diagonalisierbar \par
+$\hookrightarrow$ V besitzt Basis mit Eigenvektoren von f (Eigenbasis) \par
+$\hookrightarrow$ A ist diagonalisierbar \par
+$\hookrightarrow K^n$ besitzt Basis aus Eigenvektoren von A.
+}{}
+
+
+%-------------------
+%--------------------
+%--------------------
+
+
+
+\section{Dualräume}
+\ifthenelse{\equal{\kapitell}{2}}{
+\textbf{Dualraum} \par
+Dualraum = $V^* = Hom(V,K)$ \par
+Wichtige Beispiele: \par
+$\to $ Projektion auf die i-te Koordinate \par
+$\to$ Auswertungsabbildung und Abbleitungsabbildung (Polynome) \par
+}{}
+%-------------------
+\ifthenelse{\equal{\kapitelm}{2}}{
+\textbf{Duale Paarung} \par
+$\langle \cdot,\cdot \rangle: V^* \times V \ni (v^*,v) \mapsto \langle v^*,v \rangle = v^*(v) \in K$ \par
+Duale Paarung ist linear in Beiden Argumenten: \par
+$\langle \alpha v^* + \beta w^* , v \rangle = \alpha \langle v^*,v \rangle + \beta \langle w^*,v\rangle$ \par
+$\langle v^* , \alpha v + \beta w \rangle = \alpha \langle v^*,v \rangle + \beta \langle v^*,w\rangle$ \par
+}{}
+%----------
+\ifthenelse{\equal{\kapitelm}{2}}{
+\textbf{Dimension Dualraum} \par
+Wenn V endlich Dimensional ist, dann gilt $dim(V)=dim(V^*)$ \par
+}{}
+%----------------
+\ifthenelse{\equal{\kapiteln}{2}}{
+\textbf{Basis des Dualraumes} \par
+$\langle v^*_i, v_j \rangle = \delta_{ij}$ (Also Covektorren, die für jeweils einen Basisvektor aus $B_v$ 1 ergeben und bei den dann Restlichen 0) \par
+Für $v^* \in V^*$ gilt als LK: \par
+$v^* = \displaystyle\sum^n_{i=1} v^*(v_i)v^*_i$    wobei $v^*(v_i)$ die Koeffizienten sind. \par
+Folglich ist die Basis abhängig von der Basis in $B_v$ , jede Basis in $B_v$ hat eigene "duale Basis". \par
+}{}
+%------------
+
+\ifthenelse{\equal{\kapitelo}{2}}{
+\textbf{Koordinatenvektoren von Vektoren und Linearformen} \par
+$\to$ für $x = \Phi^{-1}_{B_v}(v)$ für $v \in V$ gilt: $ x_i = \langle v^*_i , v \rangle$ i = 1,..,n \par
+$\to $ für $\xi =\Phi^{-1}_{B^*_v}(v^*)$  i = 1,...,n \par
+}{}
+%--------------
+
+\ifthenelse{\equal{\kapitelp}{2}}{
+\textbf{Basiswechselmatrizen im Dualraum} \par
+Sei $T = \mathcal{T}^{B_v}_{\widehat{B}_v} = \mathcal{M}^{B_v}_{\widehat{B}_v}(id_v)$ \par
+Dann ist der wechsel der zwei dazugehörigen Dualbasen die transponierte inverse von T: \par
+$T^{-T} = \mathcal{T}^{B_v^*}_{\widehat{B}_v^*}$ \par
+}{}
+%-----------------
+
+
+\subsection{Annihilatoren}
+\ifthenelse{\equal{\kapitelq}{2}}{
+\textbf{Annihilatoren}\par
+Ist $M\subseteq V$, dann ist der Annihilator: \par
+$M^0 = \{ v^* \in V^* | \langle v^*, v \rangle = 0 \ \forall v \in M \}$ \par
+
+Sei $F \subseteq V^*,$ dann ist der Präannihilator: \par
+$^0F = \{v \in V | \langle v^* , v \rangle = 0 \ \forall v^* \in F  \}$ \par
+Es gilt: \par
+$\to \{ 0_v\}^0 = V^*$ \par
+$\to V^0 = \{ 0_{V^*} \}$ \par
+$\to ^0 \{ 0_{V^*} \} = V $ \par
+$\to ^0 (V^*) = \{0_V \}$ \par
+}{}
+%------------
+\ifthenelse{\equal{\kapitelr}{2}}{
+\textbf{(Prä-)Annihilatoren sind Unterräume.} \par
+Sei B endliche Basis von V mit dualer Basis $B^*$.\par
+$\to$ ist $(v_1,...v_k)$ eins Basis des Unterraums $U \subseteq V$, dann ist $(v^*_{k+1},....v^*_n)$ eine Basis vong $U^0$  und es gilt:\par dim($U^0$)= dim(V)-dim(U)= codim(U). \par
+$\to$ ist $(v^*_1,...v^*_k)$ eins Basis des Unterraums $F \subseteq V^*$, dann ist $(v_{k+1},....v_n)$ eine Basis vong $^0F$  und es gilt: \par
+\scalebox{0.8}{dim($^0F$)= dim($V^0$)-dim(F)= dim(F)-dim(V)= codim(F).} \par
+}{}
+%---------------------------
+
+\ifthenelse{\equal{\kapitels}{2}}{
+\textbf{Unterräume sind (Prä-)Annihilatoren} \par
+Für jeden Unterraum U von V gilt: \par
+$U = \displaystyle\bigcap_{v^* \in U^0} Kern(v^*) = ^0(U^0)$ \par
+}{}
+%---------------------------
+%---------------------------------------
+%---------------------------
+
+
+
+\subsection{Duale Homomorphsimen}
+\ifthenelse{\equal{\kapitelt}{2}}{
+\textbf{dualeHoms} \par
+V,W K-Vektorräume mit $f \in Hom(V,W)$\par
+$f^*: W^* \ni w^* \mapsto v^* := w^* \circ f \in V^*$ \par
+$\to \langle f^*(w^*),v \rangle = \langle w^* , f(v) \rangle$ \par
+Duale Homs sind wieder Homomorphismen: \par
+$f^* \in Hom(W^*,V^*)$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelu}{2}}{
+\textbf{Dualisieren einer Komposition} \par
+$(f \circ g)^* = g^* \circ f^*$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelv}{2}}{
+\textbf{Eigenschaften} \par
+$\to$ Die Abbildung I, die jedem f ein $f^*$ zuordnet ist injektiven Homomorphismus.  \par
+$I: Hom(V,W) \ni f \mapsto f^* \in Hom(W^*,V^*)$ \par
+$\to$ Wenn V, W endlich-dimensional sogar ein Isomorphismus:\par
+\scalebox{0.7}{$dim(Hom(W^*,V^*))= dim(Hom(V,W)) = dim(V) dim(W)$ } \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelw}{2}}{
+\textbf{FunFakt} \par
+Mit Auswahlaxiom kann man zeigen, dass I für unendlich dim V und endlich dim Bildraum W sogar Surjektiv ist. Und andernfalls nicht. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelx}{2}}{
+\textbf{Allgemeine Aussagen zu dualen Homs} \par
+$\to f \in Hom(V,W)$ist injektiv wenn $f^* \in Hom(W^*,V^*)$ surjektiv ist. \par
+$\to f \in Hom(V,W)$ist surjektiv wenn $f^* \in Hom(W^*,V^*)$ injektiv ist. \par
+$\to f \in Hom(V,W)$ist bijektiv wenn $f^* \in Hom(W^*,V^*)$ bijektiv ist. \par
+$\to$ Wenn f und $f^*$ beide bijektiv, gilt $(f^*)^{-1} = (f^{-1})^*$ \par
+}{}
+%----------------
+
+\ifthenelse{\equal{\kapitely}{2}}{
+\textbf{Dartellungsmatrizen dualer Homs} \par
+V, W endlich dims K-Vektorräume mit Basen $B_v, B_w$ , f ein Hom und $f^*$ dualer Hom, dann ist: \par
+$A= \mathcal{M}^{B_v}_{B_w}(f) $und$ A^T = \mathcal{M}^{B^*_w}_{B^*_v}(f^*)$ \par
+Es gilt: \par
+Rang(f) = Rang ($f^*$) \par
+$(f_A)^* = f_{A^T}$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelz}{2}}{
+\textbf{Fundamentale Unterräume} \par
+$Bild(f^*) = Kern(f)^0$ in $V^*$\par
+$Kern(f^*) = Bild(f)^0$  in $W^*$\par
+$Bild(f) = ^0Kern(f^*)$ in W \par
+$Kern(f) = ^0Bild(f^*) in V$ \par
+Selbiges gilt für f = A und * = T \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelaa}{2}}{
+\textbf{Dualraum eines Faktorraumes} \par
+$(V/U)^* \cong U^0$ \par 
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelab}{2}}{
+\textbf{Faktorraum eines Dualraums} \par
+$V^* / U^0 \cong U^*$ \par
+}{}
+%---------------------------
+
+\subsection{Bidualraum} 
+\ifthenelse{\equal{\kapitelac}{2}}{
+\textbf{Bidualraum} \par
+
+Der Bidualraum sind alle Linearformen auf $V^*$. \par 
+Für jedes feste $v \in V$ ist: \par
+$V^* \ni v^* \mapsto \langle v^* , v \rangle \in K$ \par 
+eine Linearform auf $V^*$. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelac}{2}}{
+\textbf{Kanonische Injektion} \par
+$i_v = V \ni v \mapsto \langle \cdot,v \rangle \in V^{**}$ \par
+Injektion(homomorphismus von V nach $V^{**}$) (Wenn V endlich dim ist, sogar eine Bijektion)\par
+ Wenn V endlich dimensional ist, gilt: \par
+ $\to \forall F \subseteq V^* $gilt$ F^0 = i_v (^0F)$ \par
+ $\to \forall U \subseteq V$ (U ist Unterraum) gilt $ (U^0)^0 = i_v (U)$ \par
+}{}
+%---------------------------
+ \ifthenelse{\equal{\kapitelad}{2}}{
+ \textbf{Bidualer Hom} \par
+ $\to $\scalebox{0.9}{$ f^{**}: V^{**} \ni v^{**} \mapsto w^{**}= v^{**} \circ f^* \in W^{**}$ } \par
+ $\to i_w \circ f = f^{**} \circ i_v$
+}{}
+
+%---------------------------
+ %---------------------------
+%---------------------------
+
+
+
+ \subsection{Billineare Abbildungen}
+ \ifthenelse{\equal{\kapitelae}{2}}{
+ \textbf{Bil-Abbildunden}\par
+ $\to$f mit $f: U \times V \to W$ heißt billinear, wenn in beiden Argumenten linear. \par
+ $\to $ Menge aller Billienaren Abbildungen: Bil(U,V; W) \par
+ $\to $ Wenn W = K, dann heißts Bilienarform \par
+ $\to $ Bil(U,V;W) ist ein Unterraum von $W^{U\times V}$ \par
+}{}
+%---------------------------
+ \ifthenelse{\equal{\kapitelaf}{2}}{
+ \textbf{Eindeutigkeitssatz/Tensorproduktraum} \par
+ Sei $(u_i)_{i \in I}$ eine Basis von V und $(v_j)_{j \in J} von V$ und $(w_{ij})_{(i,j)\in I \times J}$ eine Familien von Vektoren in W. \par
+ $\to$ Es gibt genau eine bil.Abbildung mit: $f(u_i,v_j)= w_{ij} \forall (i,j)\in I\times J$ \par
+ $\to$ Diese Familie ist i.A keine Basis.
+ $\to$ für bilineare Abbildungen gilt: $f(\alpha u,v) = f(u, \alpha v)$ \par
+ Ein Vektorraum, indem $(\alpha u,v) = (u, \alpha v)$ gilt, heißt Tensorproduktraum. \par
+}{}
+%---------------------------
+ \ifthenelse{\equal{\kapitelag}{2}}{
+\textbf{Konstruktion des Tensorproduktraums:} \par
+ Seien U und V über K mit den Basen $(u_i)_{i \in I}$ und $(v_j)_j\in J$ \par
+ Betrachte Unterraum von $K^{I \times J}$:\par
+ \scalebox{0.8}{$U \bigotimes V = \{T:I\times J | T(i,j) \neq 0 $für endlich viele$ (i,j) \}$ } \par
+ $\to u_i \otimes v_j = [(k,l) \mapsto \delta_{ik} \delta_{lj}]$ wobei $(k,l) \in I \times J$ \par
+ $\to B = (u_i \otimes v_j)_{(i,j) \in I \times J}$ ist eine Basis des Tensorproduktraumes. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelah}{2}}{
+ \textbf{Eigenschaften Tensorpüroduktraum} \par
+ $\to$ Elemente in $V \bigotimes U $ heißen Tensoren. \par
+ $\to $ Die Abbildung die (u,v) auf $u \otimes v$ mapped  heißt univerlesse bilineare Abbildung genannt.\par
+ $\to$ Tensoren mit $u \otimes v $ und u,v $\neq 0$ heißen Elementartensoren. \par
+Sei $u = \sum_{i\in I'} \alpha_i u_i$ und $v = \sum_{j\in J'} \beta_j v_j$ wobei I',J' endliche Teilmengen der Basisindexmengen sind. \par
+$\otimes (u,v)= \otimes(\sum_{i\in I'} \alpha_i u_i, \sum_{j\in J'} \beta_j v_j ) = \sum_{i\in I'} \sum_{j\in J'} \alpha_i \beta_j (u_i \otimes v_j)$ \par
+Es gilt weiter: \par
+$\to dim(U \bigotimes V) = dim(U) \cdot dim(V)$ \par  
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelai}{2}}{
+\textbf{Rechenregeln} \par
+$\to (u \otimes v) + (\widehat{u} \otimes v ) = (u + \widehat{u})\otimes v$ \par
+$\to (u \otimes v) + (u \otimes \widehat{v}) = u \otimes (v+ \widehat{v})$ \par
+$\to (\alpha u ) \otimes v = \alpha (u \otimes v) = u \otimes (\alpha v)$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelaj}{2}}{
+\textbf{Rang eines Tensors} \par
+Rang(T) ist die minimale Anzahl an Summanden, sodass T darstellbar ist mit: \par
+$T = \displaystyle\sum_{k=1}^{n}u_k \otimes v_k$ wobei u und v beliebige Vektoren aus V und U sind. \par
+$\to$ Der Nulltensor ist der einzige Tensor mit Rang 0. \par
+$\to $ Jeder Elementartensor, also $u\otimes v \ $mit$ \ u,v \neq 0$ hat Rang 1 \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelak}{2}}{
+\textbf{universelle Eigenschaft} \par
+$\to g \in Bil(U,V;W) \ \exists! \ f \in Hom(U\otimes V; W)$, sodass $g = f \circ \otimes$, also $g(u,v)= f(u\otimes v)$ \par
+$\to$ Diese Zuordnung, also $g \mapsto f$ ist ein Vektrorraumisomorphismus. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelal}{2}}{
+\textbf{weitere Isomorphismen} \par
+Sein V,U,W endlich dimensionale Vräume, über K. \par
+\scalebox{0.57}{$Hom(U\otimes V;W) \cong Bil(U,V;W) \cong Hom(U, Hom(V,W)) \cong Hom(V,Hom(U,W))$ } \par
+Wenn W der Köprer ist, folgt \par
+\scalebox{0.6}{$Bil(U,V;K) \cong Hom(U \otimes V; K) \cong (U \otimes V)^* \cong Hom(U,V^*) \cong Hom(V, U^*)$ }\par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+\subsection{Multilineare Abbildungen}
+\ifthenelse{\equal{\kapitelam}{2}}{
+\textbf{Multilin Abbildungen} \par
+$\to$ Abbildungen f mit $f: V_1 \times \dots \times V_N \to W$, die in allen Argumenten linear sind. \par
+$\to$ Menge aller: $Mult(V_1, ..., V_N;W)$ \par
+$\to$ Es gilt der Eindeutigskeitsatz. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelan}{2}}{
+\textbf{Tensorproduktraum multilienarer} \par
+Seien $V_1,..,V_N$- K-Vräume mit $N\in \mathbb{N}_0$ und $(v_{1,i_1})_{i_1 \in I_1}, ...,(v_{N,i_N})_{i_N \in I_N}$ \par
+\scalebox{0.55}{$\to \displaystyle\bigotimes_{i=1}^{N}V_i = \{ T: I_1 \times ... \times I_N \to K | T(i_1,...,i_N) \neq 0  $für endlich viele$ (i_1,...,i_N)\}$ } \par
+$\to$ Elemente davon heißen Tensoren der Stufe/Ordnung N. \par
+$\to $ universale mutltilineare Abbildung:\par
+\scalebox{0.75}{$v_{1,i_1} \otimes \cdots \otimes v_{N,i_N} = [(K_1,...,k_N) \mapsto \delta_{i_1 k_1} \cdots \delta_{i_N k_N}]$ }\par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelao}{2}}{
+\textbf{universelle Eigenschaft(Mult)} \par
+$\to $\scalebox{0.7}{$ g \in Mult(V_1 \times \cdots \times V_N;W) \ \exists! \ f \in Hom(V_1\otimes \cdots \otimes V_N; W)$ }\par, sodass $g = f \circ \otimes$ \par
+$\to$ Diese Zuordnung, also $g \mapsto f$ ist ein Vektrorraumisomorphismus. \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+\ifthenelse{\equal{\kapitelap}{2}}{
+\subsection{Tensoren über Vektroraum}
+$\mathcal{T}_{s}^{r}(V) = V \otimes \cdots \otimes V \otimes V^* \otimes \cdots \otimes V^*$ \par
+hier ist V r-mal tensoriert mit $V^*$ s-mal tensoriert. Diese heißen Tensoren vom Typ (r,s) über V. \par
+$\to$ Basis davon ist: $e_{i_1} \otimes \cdots \otimes e_{i_r} \otimes \epsilon^{j_1} \otimes \cdots \otimes \epsilon^{j_s}$ \par
+mit $1 \leq i_1 ,...,i_r \leq n $und$ 1 \leq j_1,....,j_s \leq n$ \par
+Jeder Tensor $T \in \mathcal{T}_{s}^{r}(V)$ ist eine LK: \par
+
+\scalebox{0.6}{$T = \displaystyle\sum_{i_1 =1}^{n} \cdots \displaystyle\sum_{i_r =1}^{n} \displaystyle\sum_{j_1 =1}^{n} \cdots \displaystyle\sum_{j_s =1}^{n} T_{j_1,....,j_s}^{i_1,....,i_r} e_{i_1} \otimes \cdots \otimes e_{i_r} \otimes \epsilon^{j_1} \otimes \cdots \otimes \epsilon^{j_s} $ } \par
+Dabei ist: $T_{j_1,....,j_s}^{i_1,....,i_r}$  die Komponenten, quasi als Matrix mit r+s Dimensionen und $n^{r+s}$ Einträgen.
+ \par
+ 
+DIe Zuordnung: $\mathcal{T}_{s}^{r}(V) \ni T \mapsto T_{j_1,....,j_s}^{i_1,....,i_r} \in (K^n)^{r+s} $\par ist ein Vraumisomorphimus.
+\par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelaq}{2}}{
+\textbf{Tensoren als Abbildungen} \par
+$\to \mathcal{T}_{0}^{0}(V) = K $ \par
+$\to \mathcal{T}_{1}^{0}(V) = V^*  \cong Hom(V,K)$ \par
+$\to \mathcal{T}_{0}^{1}(V) = V  \cong Hom(V^*,K)$ \par
+$\to$\scalebox{0.8}{$ \mathcal{T}_{2}^{0}(V) = V^* \otimes V^*  \cong Hom(V \otimes V,K) \cong Hom(V,V^*)$ } \par
+$\to$\scalebox{0.6}{$ \mathcal{T}_{1}^{1}(V) = V \otimes V^*  \cong Hom(V^* \otimes V,K) \cong Hom(V,V) \cong Hom(V^*,V^*)$ } \par
+$\to $\scalebox{0.8}{$ \mathcal{T}_{0}^{2}(V) = V \otimes V  \cong Hom(V^* \otimes V^*,K) \cong Hom(V^*,V)$ } \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelar}{2}}{
+\textbf{Symmetrische und Schiefsymmetrische} \par
+$\to $ Tensoren $T \in \mathcal{T}_{0}^{r}$ sind symmetrsich, wenn gilt: \par
+$T(\epsilon^{i_1},...,\epsilon^{i_r}) = T(\epsilon^{i_{\sigma(1)}},...,\epsilon^{i_{\sigma(r)}}) $ \par
+$\to $ Tensoren $T \in \mathcal{T}_{0}^{r}$ sind schiefsymmetrsich, wenn gilt: \par
+$T(\epsilon^{i_1},...,\epsilon^{i_r}) = (sgn \sigma) T(\epsilon^{i_{\sigma(1)}},...,\epsilon^{i_{\sigma(r)}}) $ \par
+
+$\to $ Alternierender Tensor ist, wenn zwei verschiedene Argumente gleich sind, der Tensor = 0 wird \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelas}{2}}{
+\textbf{Eigenschaften} \par
+$\to $Ist T alternierend, dann ist T auch schiefsymmetrsich. \par
+$\to$ wenn $char(K) \neq 2$, so gilts auch umgekehrt. \par
+$\to$ wenn char(K) = 2, ist $\mathcal{T}_{0}^{r}(V)_{sym} = \mathcal{T}_{0}^{r}(V)_{skew}$ \par
+$\to$ wenn r = 0 oder 1 gilt: $\mathcal{T}_{0}^{r}(V)_{sym} = \mathcal{T}_{0}^{r}(V)_{skew} = \mathcal{T}_{0}^{r}(V)$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelat}{2}}{
+\textbf{Symmetrie auch für Komponenten}\par
+Es ist äquivalent: \par
+$\to T \in \mathcal{T}_{0}^{r}(V)$ ist symmetrisch. \par
+$\to $ Die Komponenten sind $T^{i_1,...,i_r} =  T^{i_{\sigma(1)},...,i_{\sigma(r)}}$ \par 
+und \par
+$\to T \in \mathcal{T}_{0}^{r}(V)$ ist schiefsymmetrisch.
+$\to $ Die Komponenten sind $T^{i_1,...,i_r} = (sgn \sigma) T^{i_{\sigma(1)},...,i_{\sigma(r)}}$ \par
+
+ $\to $Die Menge der schiefsymmetrischen bzw. symmetrsichen Tensoren sind Unterräume. \par
+
+ }{}
+%---------------------------
+
+\ifthenelse{\equal{\kapitelau}{2}}{
+\textbf{Projektion} \par
+$P \in End(V)$ ist Projektion, wenn gilt: $P \circ P = P$ \par
+Eine Projektion auf den Unterraum Bild(P). \par
+Der Endo: \par
+\scalebox{0.9}{$\mathcal{T}_{0}^{r}(V) \ni T \mapsto proj_{sym}(T) = \frac{1}{r!} \displaystyle\sum_{\sigma \in S_r} \sigma(T) \in \mathcal{T}_{0}^{r}(V) $ }\par
+ist eine Projektion auf Menge der symmatrischen Tensoren. \par
+
+Der Endo: \par
+\scalebox{0.6}{$\mathcal{T}_{0}^{r}(V) \ni T \mapsto proj_{skew}(T) = \frac{1}{r!} \displaystyle\sum_{\sigma \in S_r}(sgn\sigma) \sigma(T) \in \mathcal{T}_{0}^{r}(V) $ }\par
+ist eine Projektion auf Menge der schiefsymmatrischen Tensoren. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelav}{2}}{
+\textbf{Dimension der Unterräume} \par
+V ein K-Raum mit char(K)$\neq$ 2 und r $\in \mathbb{N}_0$ und dim(V)= n: \par
+$ dim(\mathcal{T}_{0}^{r}(V)_{skew}) = {n\choose r} = \frac{n!}{r!(n-r)!} $ \par
+}{}
+
+textbf{Determinanten}
+\ifthenelse{\equal{\kapitelaw}{2}}{
+\textbf{Det-Form} \par
+V immer endlich dimensional\par
+$\Delta: V^n \to K$ heißt determinantenform, wenn: \par
+$\to \Delta $ eine n-lineare Form auf $V^n$ ist. \par
+$\to \Delta$ ist alternierend. \par
+$\to \Delta$ ist nicht die Nullform. \par
+$\Delta$ wird durch genau einen $T \in \mathcal{T}_{n}^{0}$ repräsentiert \par
+ Es ist äquivalent: \par
+ $\to $ T ist alternierend. \par
+ $\to $ Wenn $(v_1,...,v_i)$ lin. abhängig ist, ist $T(v_1,...,v_i)=0$ \par
+}{}
+%---------
+
+\ifthenelse{\equal{\kapitelax}{2}}{
+\textbf{Determinantenformform} \par
+$v \in V$ und $(b_1,..,b_i)$ einen Basis von V \par und $\Delta $form auf $V^n$ \par
+\scalebox{0.7}{$\to  \Delta(v_1,...,v_n)= (\displaystyle\sum_{\sigma \in S_n}(sgn\sigma)t_{\sigma(1),1} \cdots t_{\sigma(n),n}) \cdot \Delta (b_1,....,b_n)$ }\par
+$\forall (v_1,..,v_n) \in V^n$ mit T die eindeutige Matrix: \par
+$v_j= \displaystyle\sum_{i=1}^{n} t_{ij} b_i$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelay}{2}}{
+\textbf{Basiserkenner} \par
+Äquivalent: \par
+$\hookrightarrow \Delta(v_1,...,v_n) \neq 0$ \par
+$\hookrightarrow (v_1,...,v_n)$ ist Basis von V. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelaz}{2}}{
+\textbf{Determinanten einer Matrix} \par
+Sei $a_j = \displaystyle\sum_{i=1}^{n}t_{ij}e_i$ eins Matrix $\in V^n $\par mit V = $K^n$ also $V^n \cong K^{n \times n}$ \par
+$det(A)= \displaystyle\sum_{\scriptstyle \sigma \in S_n} (sgn \sigma) a_{\scaleto{\sigma(1),1}{4pt}} \cdots a_{\scaleto{\sigma(n),n}{4pt}}$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelba}{2}}{
+\textbf{Eigenschaften Determante} \par
+$\to $ det(A) ist eine alternierende Mutlform der Spaltenvektoren von A. \par
+$\to det(\alpha A) = \alpha^n det(A)$ \par
+$\to det(A) \neq 0  \Leftrightarrow$ A ist regulär $\Leftrightarrow$ Rang(A)=n $\Leftrightarrow (a_{\cdot 1},...,a_{\cdot n})$ ist lin unabhäng.  \par
+$\to $det(I)=1 \par
+$\to$ det(AB)=det(A)det(B) \par
+$\to det(A^{-1})= 1/det(A)$, wenn A invertierbar. \par
+$\to det(A^T)= det(A)$ \par
+$\to$ Ähnliche Matrizen haben gleiche Determinante.
+$\to det(A \in K_{\rhd}^{n \times n})= a_{1,1}\cdots a_{n,n}$\par
+$\to$ \scalebox{0.8}{$ det(A =  \left[
+\begin{tabular}{c c}
+   $A_{11}$  & 0 \\
+    $A_{21}$ & $A_{22}$
+\end{tabular}
+\right] )= det(A_{11}) det(A_{22})$ } \par
+(Block $A_{21}$, kann auch Block $A_{12}$ sein)
+Für Elementare Zeilenumformungen gilt: \par
+ $\to $ Matrix D: Typ 1: Multiplikation der i-ten Zeile mit einen Skalar $ \alpha \Rightarrow$ det(D) = $\alpha$ \par
+ $\to$ Matrix S: Typ 2: Addition des $\alpha$-fachen zur i-ten Zeile: $\Rightarrow det (S) = 1$\par
+ $\to$ Matrix T: Typ 3: Vertauschen der i-ten mit der j-ten Zeile: $\Rightarrow det(T) = -1$ \par
+}{}
+%---------------------------
+ \ifthenelse{\equal{\kapitelbb}{2}}{
+\textbf{Begriffe} \par
+$\to$ Streichugnsmatrix: Die $(n-1)\times (n-1)$ Untermatrix, die sich ergibt, wenn man die i-te und die j-te Zeile streicht: $(A)_{\neq i, \neq j}$. \par
+$\to$ Unterdeterminante / Minor: Ist die Determinante der Streichungsmatrix: zum jeweiligen i und j:
+$ [A]_{ij} = det((A)_{\neq i, \neq j})$ \par
+$\to$ Kofaktor: $\widetilde{a}_{ij} = (-1)^{i+j} [A]_{ij}$ ist der Kofaktor von A zu den Indices i,j. \par 
+$\to cof(A) = (\widetilde{a}_{ij})_{1\leq i, j \leq n} $ heißt die Kofaktormatrix von A. \par
+$\to adj(A) = cof(A)^T$ das Transponierte der cof(A), nennen wir die adjungierte Matrix von A. \par
+\textbf{Für die adjungierte gilt:} \par
+$\to adj(A)A = A adj(A) = det(A)I$ (Bis aud den Faktor det(A)ist die adjungierte das Inverse von A) \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbc}{2}}{
+\textbf{Laplace Entwicklung} \par
+\scalebox{0.7}{$det(A) = \displaystyle\sum_{j=1}^{n}(-1)^{i+j} a_{ij} det((A)_{\neq i, \neq j}) = \displaystyle\sum_{j=1}^{n}(-1)^{i+j} a_{ij} [A]_{ij} $} \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbd}{2}}{
+\textbf{Cramersche Regel} \par
+Sei A invertierbar, dann gilt für Ax=b, die einzelenen Koordinaten des Lösungsvetors: \par
+\scalebox{0.85}{$ x_i = \frac{det(a_{\cdot 1},..., a_{\cdot i-1}, \textcolor{red}{b}, a_{\cdot i +1},...,a_{\cdot n})}{det(A)}$ für i = 1,...,n.} \par 
+Also den Vektor b in die i-te Spate einsetzen. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbe}{2}}{
+\textbf{Det von Endos} \par
+Sei f ein Endo, dann: det(f) = det(A) für $A = \mathcal{M}^{Bv}_{Bv}(f)$ \par 
+Dabei ist die Basis egal, solange es dieselbe ist. (Weil ähnliche Matrizen ist det gleich).\par
+$\to det(\alpha f) = \alpha^n det(f)$ \par
+$\to det(f) \neq 0 \Rightarrow f $invertierbar $\Leftrightarrow Rang(f) = n$ \par
+$\to det(id_V) = 1$ \par
+$\to det(f \circ g) = det(f)det(g)$ \par
+$\to det(f^{-1}) = 1/det(f)$, falls f invertierbar \par
+$\to det(f^*) = det (f)$ für $f^*$, die zu f duale abbildung. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbf}{2}}{
+\textbf{geordneter Körper} \par
+K ist geordnet, wenn es eine totalordnung $\leq$ gibt, sodass $\alpha \leq \beta \Rightarrow \alpha + \gamma \leq \beta + \gamma$ und $\alpha \geq 0, \beta \geq 0 \Rightarrow \alpha \cdot \beta \geq 0$\par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbg}{2}}{
+\textbf{Rechenregeln im geordneten Körper}\par
+$\to \alpha \geq 0 \Rightarrow -\alpha \leq 0$\par
+$\to \alpha \leq \beta, \gamma \leq \delta \Rightarrow \alpha + \gamma \leq \beta + \delta$ \par
+$\to \alpha \leq \beta, \gamma \geq 0 \Rightarrow \alpha\gamma \leq \beta \gamma$\par
+$\to \alpha \leq \beta, \gamma \leq 0 \Rightarrow \beta \gamma \leq \alpha \gamma$ \par
+$\to \alpha^2 \geq 0$ \par
+$ \to \alpha \neq 0 \Rightarrow \alpha^2 > 0$ \par
+$\to \alpha > 0 \Rightarrow \frac{1}{\alpha} > 0$
+$\to \beta > \alpha > 0 \Rightarrow \frac{1}{\alpha} > \frac{1}{\beta} > 0$ \par
+$\to char(K) = 0$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbh}{2}}{
+\textbf{orientierungtreuer Auto}
+Sei $f\in Aut(V)$, wenn $det(f) > 0$ heißt er Orientierungstreu, wenn $det(f)< 0$ heißt er Orientieungsuntreu.\par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbi}{2}}{
+\textbf{Orientierung von Basen} \par
+Zwei Basen B und G von V heißen gleich orientiert, wenn $det(\mathcal{T}^G_B) > 0$ gilt. Wenn die Determinante der Transformatrix $<0$ ist, dann heißen die Basen umgekerht orientiert. \par
+$\to$Gleichorientierung ist eine Äquivalenzrelation auf der Menge aller Basen von V (mit genau zwei Äuwivalenzklassen). \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+\section{Normalformen}
+\ifthenelse{\equal{\kapitelbj}{2}}{
+\textbf{Diagonalisierbarkeit} \par
+Diagonalform = Eigenwerte entlang der Hauptdiagonalen. Besitzt ein Endo f über V  mit dim(V) = n, genau n paarweise verschiedene Eigenwerte, so ist f diagonalisierbar. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbk}{2}}{
+\textbf{Eigenschaften} \par
+$\to$ f ist injektiv $\Leftrightarrow$ 0 ist kein Eigenwert fon f. \par
+$\to$ Wenn $dim(V) = n \in \mathbb{N}$, f ist bijektiv $\Leftrightarrow$ 0 ist kein Eigentwert von f. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbl}{2}}{
+\textbf{Bestimmung von Eigenvektoren zu geg. Eigenwert} \par
+$\to $ LGS Lösen: $(\lambda I - A)x = 0$ \par
+Äquivalent, wenn $n \in \mathbb{N}$ \par
+$\hookrightarrow$ A ist regulär\par
+$\hookrightarrow$ o ist kein Eigenwert von A \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbm}{2}}{
+\textbf{Eigenraum}\par
+$\to Eig(f,\lambda) = \{v \in V \mid f(v) = \lambda v\}$\par
+Geometrische Vielfachheit: \par
+$\to \mu^{geo}(f,\lambda) = dim(Eig(f,\lambda))$\par
+Gleiches gilt für Matrizen. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbn}{2}}{
+\textbf{Eigenschaften:} \par
+$\to Eig(f,\lambda)$ ist ein Unterraum von V. \par
+$\to Eig()f,\lambda) \neq \{0\} \Leftrightarrow \lambda$ ist ein Eigenwert von f \par
+$\to Eig(f, \lambda) \backslash \{0\}$ ist die Menge der zu $\lambda$ gehörenden Eigenvektoren zu f. \par
+$\to Eig(f,\lambda ) = Kern(\lambda id_V - f)$ \par
+$\to$ Sind $\lambda_1, \lambda_2 \in K$ verschieden,dann $Eig(f,\lambda_1) \cap Eig(f,\lambda_2) = \{0\}$ \par
+Gleiches gilt für Matrizen. Insbesondere ist Kern(A) der Eigenraum zu $ 0 \in K$ \par
+$\to $ Eigenräume zu verschiedenen EIgenwert bilden direkte Summen. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbo}{2}}{
+\textbf{Projektoren sind diagonalisierbar} \par
+Es gilt: \par
+$\to V = Kern(P) \otimes Bild(P)$ \par
+$\to $ P kann nur 0 oder 1 als Eigenwerte haben (merhfach möglich). \par
+}{}
+%---------------------------
+
+\ifthenelse{\equal{\kapitelbp}{2}}{
+\subsubsection{Berechnung von Eigenwerten}
+f ist Endo in einem endlichdim. V. Dann ist äquivalent \par
+$\hookrightarrow \lambda$ ist ein Eigenwert von f. \par
+$\hookrightarrow det(\lambda id_V -f) = 0$ \par
+Gleiches gilt für die Dartellungsmatrizen. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbq}{2}}{
+\textbf{charackteristisches Polynom}
+$\chi_A = det(\lambda I-A) = (t-\lambda_1)^{n_1} \cdots (t-\lambda_s)^{n_s} \cdot q$ \par
+Die zahlen $n_i$ heißen algebraische Vielfachheit von $\lambda_i$: $\mu^{alg}(A,\lambda_i) = n_i$\par
+$\mu^{alg}(A,\lambda_i) = max\{k \in \mathbb{N} \big \vert (t-\lambda_i)^k | \chi_A \}$
+Wir dürfen Polynome in Matrizen und det einsetzen, weil wir den rationalen Funktionskörper gebildet haben. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbr}{2}}{
+\textbf{Spur} \par
+$\to Spur(A) = \displaystyle\sum_{i=1}^{n}a_{ii}$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbs}{2}}{
+\textbf{Eigenschaften charakteristisches Polynom}
+$\to \chi_A = \displaystyle\sum_{i=0}^{n}\alpha_i \lambda^i \in K_n[\lambda]$ \par
+$\to \chi_A $ ist ein normiertes Polynom mit $deg(\chi_A) = n$, es gilt: $\alpha_n = 1$ \par
+Im Fall $n \geq 1$ gilt:\par
+$\to \alpha_{n-1} =$ -Spur(A). \par
+$\to \alpha_0 = (-1)^n det(A)$ \par
+Vielfachheiten, zusammenhang \par
+$\to 1 \leq \mu^{geo}(A,\lambda) \leq \mu^{alg}(A,\lambda)$ \par
+ähnlich Matrizen haben haben dasslebe $\chi$ \par
+$\to A$ ähnlich zu $\widehat{A}$, dann ist $\chi_A = \chi_{\widehat{A}}$ \par
+Char.polynom von Endos \par
+Wir definieren $\chi_f = \chi_A$ für $A = \mathcal{M}^{Bv}_{Bv}(f)$\par
+$\to$Eigenwerter sind Nullstellen des char. Polynoms \par
+$\to$ ähnliche Matrizen haben selbe Spur \par
+Wir definieren: \par
+$\to$ Spur(f) = Spur(A), für $A = \mathcal{M}^{Bv}_{Bv}(f) $ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbt}{2}}{
+\textbf{Diagonalisierbarkeit} \par
+f ist diagonalosierbar $\Leftrightarrow \chi_f = (t-\lambda_1)^{n_1}\cdots (t-\lambda_i)^{n_i}$, also $\chi_f$ ganz zerfällt. \par
+Die vielfachheiten gilt: $\sum_{i=1}n_i = n$\par
+$\to \mu^{geo} = \mu^{alg} \Rightarrow$ diaogonalisierbarkeit
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+
+\subsection{Algebren}
+\ifthenelse{\equal{\kapitelbu}{2}}{
+\textbf{Definition} \par
+$(A,+,\cdot,\star)$ über K ist eine (assoziative) Algebra, wenn: \par
+$\to (A,+,\cdot)$ ein Vektorraum ist. \par
+$\to (A,+,\star)$ ist ein Ring. \par
+$\to$\scalebox{0.8}{$ (\alpha \cdot a) \star b = \alpha \cdot (a \star b) = a \star (\alpha \cdot b), \forall \alpha \in K, \forall a,b \in A$ } \par
+$\hookrightarrow$ Eine Algebra ist kommutativ, wenn $\star$ kommutativ ist. \par
+$\hookrightarrow$ Eine Uniutäre Algerba hat ein neutrales Element bezüglich $\star$. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbv}{2}}{
+\textbf{Multiplika $-\star$ ist bilinear} \par
+$\to  (\alpha \cdot a + \beta \cdot b) \star c = \alpha \cdot (a \star c)+ \beta \cdot (b \star c)$ \par
+$\to  a \star (\beta \cdot b + \gamma \cdot c) = \beta \cdot (a \star b) + \gamma \cdot (a \star c)$ \par
+Es gilt:\par
+$\to$ Jeder Körper ist kommutative Algebra über sich selbst. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbw}{2}}{
+\textbf{Algebrahoms} \par
+$\to f(a +_1 b) = f(a) +_2 f(b)$ \par
+$\to f(\alpha \cdot a) = \alpha \cdot f(a)$ \par
+$\to f(a \star_1 b) = f(a) \star_2 f(b)$ \par
+$\to$ wenn algebra mit 1 muss $f(1_1) = 1_2$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelbx}{2}}{
+\textbf{Algebrahoms kommutieren mit Polynomen} \par
+Wenn p() ein Polynom ist, und f ein Algebrahom, dann \par
+$\to f(p(a)) = p(f(a))$ \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+\ifthenelse{\equal{\kapitelby}{2}}{
+\subsubsection{Satz von Cayley Hamilton}
+$\to \chi_A (A) = 0$, also A in ihr Polynom eingesetzt ist null. \par
+$\to $ gilt für endos f \par
+$A^{-1}$ is ein Polyno von A \par
+Wenn A invertierbar, gibt es ein p, sodass \par
+$\to A^{-1} = p(A)$ \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+\ifthenelse{\equal{\kapitelbz}{2}}{
+\subsection{Ideale}
+Ideale sind Unterringe, sodass: \par
+$\to RJ \subset J$ und $JR \subset J$ \par
+$\to$ Kerne von Ringhoms sind Ideale. \par
+$\to$ Durchschnitt von Idealen ist wieder Idieal \par
+Ideal erzeugen: \par
+\scalebox{0.6}{
+$\to (E) = \left\{ \displaystyle\sum_{i=1}^{n}a_i \big\vert \exists n \in \mathbb{N}_0 \forall i = 1,..,n (a_i \in E \cup -E \cup RE \cup ER \cup RER)  \right\}$ } \par
+$\to$ Wenn Ring mit eins, so muss $a_i$ nur$\in RER$ \par
+$\to$ Hauptideal ist Ideal, welches nur ein Element als Erzeuger hat. \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+
+
+\subsection{Minimalpolynom}
+\ifthenelse{\equal{\kapitelca}{2}}{
+\textbf{annulierende Polynome sind ein Ideal} \par
+$\to J_A = \{p \in K[\lambda] \ \vert \ p(A) = 0 \}$ \par
+}{}
+%---------------------------
+
+\ifthenelse{\equal{\kapitelcb}{2}}{
+\textbf{Minimalpolynom} \par
+$\to \mu_A$ heißt Minimalpolynom, wenn $\mu_A \in J_A$ und das normierte Polynom kleinsten Grades ist. \par
+$\to \mu_A  = \mu_f$, wenn A Darstellungsmatrix von f ist. \par
+$\to $ ähnliche Matrizen haben gleiches Minimalpolynom \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcc}{2}}{
+\textbf{Bestimmen vong $\mu$} \par
+$\to$ char Polynom von A aufstellen, Faktorisieren, Potenzen Weglassen, aber schauen, dass $\mu_A$ noch $\chi_A$ teilt, und dann A einsetzen und schauen ob die Nullmatrix rauskommt. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcd}{2}}{
+\textbf{Zweiter Weg} \par
+Potenzen von der Matrix A aufstellen (bei 0 anfangen), diese MAtrizen dann vectoriesiern (GanzesA als ein Spaltenvektor), dann schauen ab welcher Potenz sich lin. abhängigkeit einschleicht. Matrix aufstellen mit den Spalten = die vektorisierten MatrizenPotenzen (bis zu potenz wos lin abhängig wird) dann den Kern dieser Matrix bestimmen. Kern ist ein Vektor, der zu einem Polynom synthetisiert werden kann. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelce}{2}}{
+\textbf{Minimalpolynom Eigenachaften} \par
+$\to \mu_A$ teilt jedes $p \in J_A$
+$\to \mu_A$ hat gleiche Nullstellen wie $\chi_A$ \par
+$\to $ Eigenwerte sind Nullstellen von $\mu_A$ \par
+$\to$ zerfällt $\mu_A$ in einfache (Potenz 1) Linearefaktoren, so ist A diagonalisierbar \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcf}{2}}{
+\textbf{Begleitmatrix} \par
+Fürn normiertes Polynom ist $C_p$ die Begleitmatrix:\par
+
+\scalebox{0.7}{$C_p = \begin{bmatrix}
+0 & 0 & \cdots & 0 & -\alpha_0 \\
+1 & 0 & \cdots & 0 & -\alpha_1 \\
+0 & 1 & \ddots & \vdots & -\alpha_2 \\
+\vdots & \ddots& \ddots& 0& \vdots\\
+0& \cdots& 0& 1& -\alpha_{n-1} \\
+\end{bmatrix}$ \par}
+
+Es gilt: $\chi_{Cp} = \mu_{Cp} = p$ \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+
+\subsection{Frobenius Normalform}
+\ifthenelse{\equal{\kapitelcg}{2}}{
+\textbf{Vowissen für Frob} \par
+$\to$ lokal annulierende Polynome sind Ideal: \par
+$\to J_{A,x} = \{ p \in K[\lambda] \mid p(A)x = 0 \}$ \par
+$\to $lokales Minimalpolynom = $\mu_{A,x} \in J_{A,x}$, normiertes mit kleinstem Grad. \par
+$\to \mu_{A,x} = \mu_{f,v}$, wenn A Darstellungsmatrize von f ist, und x der Koordinatenvektor von v. \par
+$\to$ lokales Minimalpolynom teilt alle $p \in J_{A,x}$ \par
+$\to $ lokales Minimalpolynom teilt das Minimalpolynom \par
+$\to$ Fürn lokales Minimalpolynom $\mu_{A,x}$, ist der Unterraum $\langle x, Ax, A^2x,..,A^{d-1}x \rangle$, ein A- invarianter Unterraum.\par
+$\to $ Wählen wir x so, dass der A-invariante Unterraum möglichst goß ist, heißt x, ein maxiamler Vektor. \par
+$\to$ lokale Minimalpolynome mit maximalen Vektor sind minimal Polynome \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelch}{2}}{
+\textbf{Frobenius Normalform} \par
+$\to p_1 = \mu_A $ und $P_{j+1} \mid p_j $ \par
+A ist ähnlich zu 
+\scalebox{0.7}{
+$\left[ 
+\begin{array}{cccc}
+    C_{p_1} &  &  &  \\
+     & C_{p_2} &  &  \\
+     &  & \ddots &  \\
+     &  &  & C_{p_k}
+\end{array}
+\right]$} \par
+
+$\to$ Sowol die Matrix, also auch $p_j$ sind eindeutig. \par
+$\to $ Die $p_j$ heißen Normalteiler der Matrix A \par
+$\to $ Begleitmatrix dim=m hat maximal 2m-1 Einträge $\neq 0$, damit hat FrobNormalform maximal 2n-k Eingträge $\neq 0$ \par
+$\to$ Zwei matrizen sind genau dann ähnlich wenn diegleiche Frob.normalform. \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+\subsection{JordanNormalform}
+
+%---------------------------
+\ifthenelse{\equal{\kapitelci}{2}}{
+\textbf{Verallgemeineter Eigenvektor/Hauptvektor} \par
+Hauptvektor zum Eigenwert $\lambda$ der Matrix A ist: \par
+$\to (\lambda I - A)^k x = 0$ wobei k, die Stufe des Hauptvektors genannt wird \par
+$\to$ Die Menge aller Hauptvektoren von A zu $\lambda$ nennen wir verallgemeineter Eigenraum: $GEig(A,\lambda)$ \par
+$\to$ Verallgemeinerte Eigenräume sind A-invariant \par
+$\to $ Wenn $A \in K^{n\times n}$, dann gilt: $Kern(A^n) = Kern(A^{n+j})$ \par
+$\to $Wenn $\chi_A$ vollständig in linearfaktoren zerfällt, dann gilt: \par
+$K^n = \displaystyle\bigoplus_{j=1}^{s} GEig(A,\lambda_j).$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcj}{2}}{
+\textbf{Jordanblock} \par
+Ein Jordanblock der dimension r ist: \par
+\scalebox{0.7}{
+$J_r(\lambda) = \left[
+\begin{array}{ccccc}
+      \lambda& 1 &0 & \cdots & 0\\
+     0&  \ddots& \ddots & \ddots & \vdots\\
+      \vdots&  \ddots& \ddots& \ddots& 0\\
+     \vdots&  & \ddots& \ddots & 1\\
+     0& \cdots & \cdots & 0& \lambda \\
+\end{array}
+\right]$} \par
+$\to $ für r=1 ist der BLock nur $\lambda$ \par
+$\to J_r(\lambda)$ ist ähnlich zu $C_p$ von $p= (t- \lambda)^r$ \par
+$\hookrightarrow \chi_{J_r(\lambda)} = \mu_{J_r(\lambda)} = (t-\lambda)^r $ \par
+$\to $ Jordan-Normalform hat nur Jordanblöcke auf der Diagonalen \par
+$\to $ Die Jordannormalformen von A unterscheiden sich nur in Reihenfolge der BLöcke \par
+$\to $ Wenn $\chi_A$ komplett in LF zerfällt, gibt es eine Jordannormalform \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelck}{2}}{
+\textbf{Eigenschaften Jordanform} \par
+
+$\to$ \scalebox{0.8}{ $\chi_A = \displaystyle\prod_{j=1}^{k}(t-\lambda_j)^{r_j}$}\par
+$\to$ \scalebox{0.8}{ $\mu_A = \displaystyle\prod_{\lambda \in \Lambda(A)}(t-\lambda)^{max\{r_j\mid \lambda_j = \lambda\}}$} \par
+$\to$ \scalebox{0.8}{$ \mu^{alg}(A,\lambda) = \displaystyle\sum_{\lambda_j = \lambda} r_j$} \par
+$\to $ \scalebox{0.8}{$\mu^{geo}(A,\lambda) = \displaystyle\sum_{\lambda_j = \lambda}1$} \par 
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+\subsection{Innenprodukte}
+\ifthenelse{\equal{\kapitelcl}{2}}{
+\textbf{Bilineraformen}
+Billineraformen sind: \par
+$\to$ symmetersich, wenn $\gamma(u,v) = \gamma(v,u)$ \par
+$\to $schiefsymmetrisch, wenn $\gamma(u,v) = - \gamma(v,u)$ \par
+$\to$alternierend, wenn $u=v \Rightarrow \gamma(u,v)=0$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcm}{2}}{
+\textbf{Darstellungsmatrix von $\gamma$}\par
+Sei $B_v = (v_1,..v_n)$ Basis von V\par
+$\to \mathcal{M}^{B_v}_{B^*_v}(\gamma) = (\gamma(v_i,v_j))^n_{i,j=1} \in K^{n \times n} $ \par
+$\to$ Wenn endlich dimensional ist die duale Bilinearform $\gamma^*$ von $\gamma$ gegeben durch: \par
+$\hookrightarrow \gamma^*(u,v) = \gamma(v,u) $ \par
+$\to$ Transformation mit $\widehat{A} = T^{-T} A T^{-1}$, wenn T von alt nach neu \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcn}{2}}{
+\textbf{Kongruenztansform}\par
+$\to A,\widehat{A}$ heißen kongruent, wenn\par
+$\hookrightarrow \widehat{A} = T^{-T} A T^{-1}$ \par
+$\to \widehat{A}$ ist dann symmterisch, wenn es A ist. (Symmetrei bleibt erhalten) \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelco}{2}}{
+\textbf{Rang} \par
+$\to Rang(\gamma) = Rang(A)$, wenn A darstellungatrix von $\gamma$. \par
+}{}
+%---------
+\ifthenelse{\equal{\kapitelcp}{2}}{
+\textbf{Eigenschaften}\par
+$\to \gamma$ ist nicht  ausgeartet, wenn die linearen Abbildungen, bei denen ich jeweils ein Argument einsetzte und das Andere frei lasse,  beide injektiv sind. \par
+$\to \gamma$ heißt perfekt, wenn diese lin, Abbildung sogar bijektiv sind. \par
+Es ist äquivalent: \par
+$\hookrightarrow u \mapsto \gamma(u,\cdot)$ ist injektiv \par
+$\hookrightarrow v \mapsto \gamma(\cdot, v) $ ist injektv \par
+$\hookrightarrow \gamma$ ist nicht ausgeartet. \par
+$\hookrightarrow \gamma$ ist perfekt. \par
+$\hookrightarrow$ A ist regulär. \par
+$\hookrightarrow$ Rang$(\gamma)$ = Rang(A) = n \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcq}{2}}{
+\textbf{quadratische Formen} \par
+q(v) ist quadratische Form, wenn gilt: \par
+$\hookrightarrow q(\alpha v) = \alpha^2 q(v)$ \par
+$\hookrightarrow$ \scalebox{0.8}{ $\Gamma(u,v) = q(u+v) - q(u) - q(v)$ ist $\in Bil(V,K)$ } \par
+$\to$ Menge aller Quadratischen Formen = QF(V). \par
+$\to $ Quadratische Formen bilden Vektorraum \par
+$\to q_{\lambda}(u) = \gamma(u,u)$ \par 
+$\to$ Wenn $char(K) \neq 2$ sind die quadratischen Isomorph zu den symmetrischen bilineraformen. \par
+\scalebox{0.8}{
+$\to dim(QF(V)) = dim(Bil_{sym}(V,V)) = \frac{1}{2}n(n+1) $ }\par
+Polarisationsformeln, um von q-form zu bilinear zu kommen: \par
+$\gamma_q(u,v) = \frac{1}{2} (q(u+v)-q(u)-q(v))$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcr}{2}}{
+\textbf{Orthogonalität} 
+$\to (V, \gamma)$ heißt quadratischer Raum, wenn $\gamma$ ein sym. bilinearform ist. \par
+$\to$ Zwei Vektoren sind orthogonal, wenn gilt $\gamma(u,v) = 0$, also u $\bot$ v \par
+$\to $die mengen$ E_1 \bot E_2$ sind orhogonal, wenn jedes Ihrer elemente orthogonal sind. \par
+$\to$ Eine Menge $E \subset V$ heißt orthognal, wenn $u\bot v,\ \forall u,v \in E$ \par
+$\to E^{\bot} = \{v\in V | \gamma(u,v) = 0, \ \forall u \in E\}$heißt orhtogonales komplement \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcs}{2}}{
+\textbf{Satz vong Pythagoras} \par
+$\to \gamma\left( \displaystyle\sum_{i=1}^{k}v_i ,  \displaystyle\sum_{j=1}^{k}v_j \right) = \displaystyle\sum_{i=1}^{k}\gamma(v_i,v_j)$ \par
+}{}
+%---------------------------
+
+\ifthenelse{\equal{\kapitelct}{2}}{
+\textbf{orhtogonale direkte Summe} \par
+$\to U_i \bot U_j, \forall i\neq j$.\par
+$\to$ geschreiben: $\bigobot_{i\in I} U_i$ .\par
+$\to U_i $ sind Unterräume, die zueinander orthogonal sind. \par
+$\to$ Wenn $B_v$ eine orhtogonalbasis von V ist, dann ist die Darstellungmstrix $\mathcal{M}^{B_v}_{B^*_v}(\gamma)$ diagonal. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcu}{2}}{
+\textbf{Homomorphismen quadratischer Räume} \par
+$\hookrightarrow$  f muss linear sein. \par
+$\hookrightarrow \gamma_2(f(u),f(v)) = \gamma_1(u,v), \ \forall u,v \in V$ \par
+$\to$ ISt f ein Isio quad räume, dann auch $f^{-1}$, Wenn endlich dim, dann $Rang(\gamma_1)=Rang(\gamma_2)$ \par
+$\to$ Man kann die Basis so wählen, dass Darstellungsmtrix von $\gamma$ nur einträge aud der Diagonalen hat (bis zum Rang r von $\gamma$), danach nur noch 0en auf der Hauptdioagonalen \par
+$\to$ Jede symmetrische Matrix ist kongruent zu einer Diagonalmatrix \par
+}{}
+%-------------------
+
+\ifthenelse{\equal{\kapitelcv}{2}}{
+\textbf{Signatur} \par
+$\to $Is der Körper = $\mathbb{R}$, gibt es eine Basis von V, sodass:\par
+$\mathcal{M}^{B_v}_{B^*_v}(\gamma)= 
+\left[
+\begin{array}{ccc}
+    I_{ n_+} &  & \\
+     & -I_{ n_-} & \\
+     &  & 0_{ n_0}\\
+\end{array}\right]$ \par
+$\to$ Signatur$(n_+, n_-, n_0)$ \par
+
+$\to $Is der Körper = $\mathbb{C}$, gibt es eine Basis von V, sodass:\par
+$\mathcal{M}^{B_v}_{B^*_v}(\gamma)= 
+\left[
+\begin{array}{cc}
+    I_{r}  & \\
+     &   0
+\end{array}\right]$
+Mit $r = rang(\gamma)$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcw}{2}}{
+\textbf{Trägheitssatz vong Sylvester} \par
+Die Signatur, der durch A induzierten Bilinarform $\gamma_A$ ist durch A eindeutig festgelegt. \par
+}{}
+%---------------------------
+%---------------------------
+%---------------------------
+
+
+\subsection{Euklidische Räume}
+\ifthenelse{\equal{\kapitelcx}{2}}{
+\textbf{Definitheit} \par
+Für eine Bilinearform $\gamma$ gilt: \par
+$\hookrightarrow$ positiv definit, wenn $\gamma(v,v) > 0 \forall v \neq 0$ \par
+$\hookrightarrow $ positiv semidefinit, wenn $\geq$.\par
+ $\hookrightarrow $ negatv definit, wenn $\gamma < 0$. \par
+ $\hookrightarrow $ negativ semidefinit, wenn $\leq$. \par
+$\hookrightarrow $ indefitnit, wenn nix davon stimmt. \par
+$\to$ Definitheit kann man ablesen, wenn Darstellugnmatrix nur positive eintrage hat. etc. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcy}{2}}{
+\textbf{Euklidischer Raum} \par
+Euklidicsher Raum ist ein Vektorraum mit einer positiv definiten symmetrischen Bilinearform \par
+$\to$ Also haben diese Bilinearformen die Signatur(n,0,0) \par
+$\to (x,y) \mapsto y^Tx$ heißt Standart Innenprodukt/Skalaprodukt \par
+$\to$ Im euklidischen Raum sind orthogonale Familien an Vektoren auch Linear unabhängig. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelcz}{2}}{
+\textbf{Cauchy-Schwarz Ungleichung} \par
+$\to \gamma(u,v)^2 \leq \gamma(u,u)\gamma(v,v)$ oder $|\gamma(u,v)| \leq \sqrt{\gamma(u,u)}\sqrt{\gamma(v,v)}$\par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelda}{2}}{
+\textbf{Normen} \par
+$\|\cdot\|: V\to \mathbb{R}$ heißt Norm, wenn: \par
+$\hookrightarrow \|u\| \geq 0$ und $\| u\| = 0 \Rightarrow u = 0$ \par
+$\hookrightarrow \|\alpha U\| = |\alpha| \|u\|$ \par
+$\hookrightarrow \|u+v\| \leq \|u\| + \|v\|$ \par
+$\to$ BilForm induzieren Norm \par
+$\|\cdot\|_{\gamma}: u \mapsto \|u\|_{\gamma} = \sqrt{\gamma(u,u)}$ \par
+$\to$ Satz von Pythagoras \par
+$\left\| \displaystyle\sum_{k}^{i=1}v_i \right\|^2 = \displaystyle\sum_{i=1}^{k} \|v_i\|^2$ \par
+}{}
+%---------------------------
+
+\ifthenelse{\equal{\kapiteldb}{2}}{
+\textbf{Normieren} \par
+$\to u \in V$ ist ein einheitsvektor(normierter Verktro), wenn $\|u\|=1$. \par
+$\to u$ zu normieren, teilt man den Vektor durch seine Norm $\frac{u}{\|u\|}$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapiteldc}{2}}{
+\textbf{Orthogonale Projektion} \par
+$proj^{\gamma}_{u}(\textcolor{red}{v}) = \frac{\gamma(\textcolor{red}{v},u)}{\|u\|^2}u$ \par
+$\to V = Bild(proj^{\gamma}_{u}) \bigobot Kern(proj^{\gamma}_{u})$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapiteldd}{2}}{
+\textbf{Gramm-Schmidt-Verfahren} \par
+Nur wenn char(K) $\neq$ 2, Macht aus lineare unabhängigen Familie eine Orhogonale fam. \par
+$v_i$ sind lin unabhängigr fam, und $u_i$ soll der Output sein.\par
+Setze $u_1 = v_1$, danach: \par
+$u_j = v_j - \displaystyle\sum_{i=1}^{j-1}proj_{u_i}^{\gamma}(v_j)$ \par
+jetzt hat man $u_1$ und findet mit der Formel oben $u_2$ heraus und macht das für jedes weitere $u_i$, das mach braucht. \par
+Will man eine Orthonormale menge, so normiert man alle vektoren halt noch. \par
+$\to$ Es gilt: $\langle v_1,...,v_n \rangle = \langle u_1,...,u_n \rangle$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapitelde}{2}}{
+\textbf{Orthognale Abbildungen} \par
+$\to f: V \to W$, für V und W Euklidische Räume. \par
+$\hookrightarrow $f  muss linear sein. \par
+$\hookrightarrow \gamma_2(f(u),f(v)) = \gamma_1(u,v)$\par
+$\to$ Orthogonale Abbildungen f sind injektiv \par
+$\to$ Haben die beiden Räume, diegleiche endliche Dimension, ist f auch bijektiv \par
+$\to$ Komposition orthogonaler Abbildungen ist Orthogonale \par
+$\to$ Wenn M die Darstellungsmatrix von $\gamma$ ist und x der Koordinatenvektorn von v und y der ...von v, dann gilt: $\gamma(u,v) = x^T M y$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapiteldf}{2}}{
+\textbf{Orthogonalität von f} \par
+$\hookrightarrow f$ ist $(\gamma_1,\gamma_2)$-orthogonal. \par
+$\hookrightarrow A^T M_2 A = M1$, wenn M wieder Darstellung von $\gamma$ ist und A die Darstellung von f. \par
+$\to$ Wenns Orthonormalbasen sind, dann ist $M_2 = I_n$ und $M_1 = I_m$ \par
+$\to$ Bei Endos ist $M_1 = M_2 = M$ \par
+$\to$ Eigenwerte von $\gamma$-orthogonalen Endos sind nur 1 oder -1. \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapiteldg}{2}}{
+\textbf{Orthogonale Gruppe} \par
+$\to \gamma$-orhtogonale Endos bilden mit Komposition eine Gruppe, genannt: $O(V,\gamma)$ \par
+$\to $ die spezielle Orthogonale Gruppe ist: $SO(V,\gamma)= \{f \in O(V,\gamma)| det(f)=1\}$ \par
+$\to$ Gleiches gilt für deren Darstellugnsmtarizen. \par
+}{}
+\subsubsection{Riez-Abbildung}
+
+%---------------------------
+\ifthenelse{\equal{\kapiteldh}{2}}{
+\textbf{Riez-Iso} \par
+Im endlich dim.ist $\Gamma: V \ni v \mapsto \gamma(\cdot,v) \in V^*$ ein Iso. \par
+\scalebox{0.8}{
+$\gamma(u,v) = \langle \Gamma(v),u \rangle = \langle \Gamma(u),v \rangle = \gamma^{-1}(\Gamma(u), \Gamma(v))$ } \par 
+Man schreibt fü den Riez-Iso auch: $\Gamma_{ V\to V^*}$ \par
+$\to$ Bei $R^n$, dann $\Gamma: \mathbb{R}^n \ni x \mapsto Mx \in (\mathbb{R}^n)^*$ \par
+Wenn zwei euklidische Räume gleiche dim haben ist äquivalent: \par
+$\hookrightarrow $ f ist $(\gamma_1,\gamma_2)$-orthogonal \par
+$\hookrightarrow  f^*$ ist $(\gamma_2^{-1},\gamma_1^{-1})$-orthogonal \par
+Bei Endos dann:\par
+$\hookrightarrow$ f ist $\lambda$-orhtogonal. \par
+$\hookrightarrow f^*$ ist $\gamma^{-1}$- orthogonal \par
+}{}
+
+%---------------------------
+
+\ifthenelse{\equal{\kapiteldi}{2}}{
+\textbf{Adjungierte Homs} \par
+Sei $f\in Hom(V,W)$, für V,W euklidische Räume, so ist die zu f adjungierte Abildung\par
+\scalebox{0.7}{
+$\to f^{\circ} = \Gamma^{-1}_{V \to V^*} \circ f^* \circ \Gamma_{W\to W^*}$ geht von $W \to V$ } \par
+Es gilt für die adjungierte: \par
+$\to \gamma_2(w,f(v)) = \gamma_1(f^{\circ}(w),v)$ \par
+Die Adjugierte ist von den jeweiligen Bililinearformen $\gamma_1, \gamma_2$ abhängig. \par
+
+Wenn A die Darstellung von f ist, gilt: \par
+$\to A^{\circ} = \mathcal{M}^{Bw}_{Bv}(f^{\circ}) = M_1^{-1}A^TM_2$ \par
+$\to A^{\circ}$ ist Darstellung von $f^{\circ}$ \par
+$\to$ Die zu f biadjungierte ist identisch zu f, also $f^{\circ \circ} = (f^{\circ})^{\circ} = f$ \par
+}{}
+%---------------------------
+\ifthenelse{\equal{\kapiteldj}{2}}{
+
+\textbf{Fundamentale Unterräume} \par
+$\to Bild(f^{\circ}) = Kern(f)^{\bot} \in V$ \par
+$\to Kern(f^{\circ}) = Bild(f)^{\bot} \in W$ \par
+$\to Bild(f) = Kern(f^{\circ})^{\bot} \in W$ \par
+$\to Kern(f) = Bild(f^{\circ})^{\bot} \in V$ \par
+$\to $ Ednlich Dim V gilt: \par
+$\to V = Kern(f) \bigobot Bild(f^{\circ})$ \par
+$\to V = Kern(f^{\circ}) \bigobot Bild(f)$ \par
+}{}
+ 
+%----------------------------
+
+
+
+By Captain Joni.info
+
+% Und nochmal, wenn du das Lesen solltest: Folg mir doch auf Insta: captain__joni ;)
+\end{multicols}
+
+\end{document}
