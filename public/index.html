@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LA2 Cheatsheet-Generator</title>
+    <link rel="stylesheet"  type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Captain Jonis LA2 Cheatsheet Generator</h1>
+    <div class="image-container">
+        <img src="kappenoni_500_500px.svg" alt="Hier wär eigentlich ein Bild" width="150" height="150">
+    </div>
+     <div class="image-container2">
+        Willkommen auf dem LA2 Cheatsheet-Generator.
+        <br>
+        Die Idee ist, das das Cheatsheet sonst zu lange wäre und nicht auf 2 Seiten passt. So kann sich 
+        jetzt jeder das Zusammenstellen war er/sie gerne auf dem Cheatsheet hätte.
+        <h4>Wichtig</h4>
+        <br>
+        Die "Titel" unten sind nicht vielaussagend oder wohldefiniert. Am Besten ihr nehmt euch das ganze (zu lange) Cheatsheet zur Hand und schaut was unter dem
+        jeweiligen Titel an Infos zu finden ist, und ob ihrs braucht oder nicht.
+        (Die im Cheatsheet kleinen fett gedruckten Überschriften sind die hier auswählbaren Blöcke)
+        Jenachdem welche Kombination an Blöcken genommen wird, kann es aktuell noch zu komischen Latex Compiles kommen (z.b. rießiger Zeilenabstand),
+        wenn dem so ist meldet euch gerne bei mir. 
+        <br>
+        Wenn dir das Cheatsheet oder der Generator helfen sollte und du dich bedanken willst, kannst du dies gerne tun, indem du mir ein Lächeln schenkst
+        oder mich mal aufn Tee einlädst ;)
+     </div>
+    <form id="titleForm">
+
+        <div class="text-alligner"> 
+            <label>
+ 
+                <input type="checkbox"  name="eins" value="2" checked> Transformatrix
+
+
+        </label>
+        <br>
+        <label>
+     
+               <input type="checkbox"  name="zwei" value="2"checked> Eigenschaften
+
+    
+        </label>
+        <br>
+        <label>
+
+             <input type="checkbox"  checked name="drei" value="2"> Basiswechsel in V und W
+     
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vier" value="2"> Äquivalente Matrizen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="fünf" value="2"> Rang-Normalform
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="sechs" value="2"> Transformatritzen für Endomorphismen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sieben" value="2"> Ähnlichkeit von Matrizen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="acht" value="2"> Invariante Unterräume
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neun" value="2"> Eigenvektoren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked  name="zehn" value="2"> Berechnung von Eigenwerten
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="elf" value="2"> Diagonalisierte Matrix
+        </label>
+        <br>
+        <h3> Dualraum</h3>
+        <label>
+            <input type="checkbox" checked name="zwölf" value="2"> Dualraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreizehn" value="2"> Duale Paarung
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vierzehn" value="2"> Dimension Dualraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="fünfzehn" value="2"> Basis des Dualraumes
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sechzehn" value="2"> Koordinatenvektoren von Vektoren und Linearformen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebzehn" value="2"> Basiswechselmatrizen im Dualraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="achtzehn" value="2"> Annihilatoren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neunzehn" value="2"> (Prä-)Annihilatoren sind Unterräume.
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zwanzig" value="2"> Unterräume sind (Prä-)Annihilatoren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einundzwanzig" value="2"> dualeHoms
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zweiundzwanzig" value="2"> Dualisieren einer Komposition
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundzwanzig" value="2"> Eigenschaften
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vierundzwanzig" value="2"> FunFakt
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfundzwanzig" value="2"> Allgemeine Aussagen zu dualen Homs
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sechsundzwanzig" value="2"> Dartellungsmatrizen dualer Homs
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenundzwanzig" value="2"> Fundamentale Unterräume
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="achtundzwanzig" value="2"> Dualraum eines Faktorraumes
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neunundzwanzig" value="2"> Faktorraum eines Dualraums
+        </label>
+        <br>
+        <h3> Bidual</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreißig" value="2"> Bidualraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einunddreißig" value="2"> Kanonische Injektion
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zweiunddreißig" value="2"> Bidualer Hom
+        <br>
+        <h3> Bil-Abbildungen </h3>
+        <br>
+
+        <label>
+            <input type="checkbox" checked name="dreiunddreißig" value="2"> Bil-Abbildunden
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"  checked name="vierunddreißig" value="2"> Eindeutigkeitssatz/Tensorproduktraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfunddreißig" value="2"> Konstruktion des Tensorproduktraums:
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sechsunddreißig" value="2"> Eigenschaften Tensorpüroduktraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenunddreißig" value="2"> Rechenregeln
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="achtunddreißig" value="2"> Rang eines Tensors
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neununddreißig" value="2"> universelle Eigenschaft
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"  checked name="vierzig" value="2"> weitere Isomorphismen
+        </label>
+        <br>
+        <h3> Multilinear</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einundvierzig" value="2"> Multilin Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="zweiundvierzig" value="2"> Tensorproduktraum multilienarer
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundvierzig" value="2"> universelle Eigenschaft(Mult)
+        </label>
+        <br>
+        <h3> Tensoren über Vraum</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vierundvierzig" value="2"> Tensoren über Vektroraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfundvierzig" value="2"> Tensoren als Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="sechsundvierzig" value="2"> Symmetrische und Schiefsymmetrische
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenundvierzig" value="2"> Eigenschaften
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="achtundvierzig" value="2"> Symmetrie auch für Komponenten
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="neunundvierzig" value="2"> Projektion
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfzig" value="2"> Dimension der Unterräume
+        </label>
+        <br>
+        <h3> Determinanten</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einundfünfzig" value="2"> Det-Form
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zweiundfünfzig" value="2"> Determinantenformform
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="dreiundfünfzig" value="2"> Basiserkenner
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vierundfünfzig" value="2"> Determinanten einer Matrix
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfundfünfzig" value="2"> Eigenschaften Determante
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sechsundfünfzig" value="2"> Begriffe
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenundfünfzig" value="2"> Laplace Entwicklung
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="achtundfünfzig" value="2"> Cramersche Regel
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neunundfünfzig" value="2"> Det von Endos
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="sechzig" value="2"> geordneter Körper
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einundsechzig" value="2"> Rechenregeln im geordneten Körper
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="zweiundsechzig" value="2"> orientierungtreuer Auto
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundsechzig" value="2"> Orientierung von Basen
+        </label>
+        <br>
+        <h3> Normalformen</h3>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="vierundsechzig" value="2"> Diagonalisierbarkeit
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfundsechzig" value="2"> Eigenschaften
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="sechsundsechzig" value="2"> Bestimmung von Eigenvektoren zu geg. Eigenwert
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenundsechzig" value="2"> Eigenraum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="achtundsechzig" value="2"> Eigenschaften:
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="neunundsechzig" value="2"> Projektoren sind diagonalisierbar
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebzig" value="2"> Berechnung von Eigenwerten
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einundsiebzig" value="2"> charackteristisches Polynom
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zweiundsiebzig" value="2"> Spur
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundsiebzig" value="2"> Eigenschaften charakteristisches Polynom
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="vierundsiebzig" value="2"> Diagonalisierbarkeit
+        </label>
+        <br>
+        <h3>Algebren </h3>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="fünfundsiebzig" value="2"> Algebren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="sechsundsiebzig" value="2"> Multiplika $-\star$ ist bilinear
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="siebenundsiebzig" value="2"> Algebrahoms
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="achtundsiebzig" value="2"> Algebrahoms kommutieren mit Polynomen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neunundsiebzig" value="2"> Satz von Cayley Hamilton
+        </label>
+        <br>
+        <h3> Normalformen die 2te</h3>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="achtzig" value="2"> Ideale
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="einundachtzig" value="2"> annulierende Polynome sind ein Ideal
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked ame="zweiundachtzig" value="2"> Minimalpolynom
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundachtzig" value="2"> Bestimmen vong $\mu
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="vierundachtzig" value="2"> Zweiter Weg$
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="fünfundachtzig" value="2"> Minimalpolynom Eigenachaften
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="sechsundachtzig" value="2"> Begleitmatrix
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="siebenundachtzig" value="2"> Vowissen für Frob
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"  checked name="achtundachtzig" value="2"> Frobenius Normalform
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked   name="neunundachtzig" value="2"> Verallgemeineter Eigenvektor/Hauptvektor
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="neunzig" value="2"> Jordanblock
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einundneunzig" value="2"> Eigenschaften Jordanform
+        </label>
+        <br> 
+        <h3> Bil-Formen</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="zweiundneunzig" value="2"> Bilineraformen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="dreiundneunzig" value="2"> Darstellungsmatrix von $\gamma$
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="vierundneunzig" value="2"> Kongruenztansform
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="fünfundneunzig" value="2"> Rang
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="sechsundneunzig" value="2"> Eigenschaften
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked  name="siebenundneunzig" value="2"> quadratische Formen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="achtundneunzig" value="2"> Orthogonalität
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="neunundneunzig" value="2"> orhtogonale direkte Summe
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundert" value="2"> Satz vong Pythagoras
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhunderteins" value="2"> Homomorphismen quadratischer Räume
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertzwei" value="2"> Signatur
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertdrei" value="2"> Trägheitssatz vong Sylvester
+        </label>
+        <br>
+        <h3> Innenproduktus</h3>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertvier" value="2"> Definitheit
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertfünf" value="2"> Euklidischer Raum
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertsechs" value="2"> Cauchy-Schwarz Ungleichung
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertsieben" value="2"> Normen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertacht" value="2"> Normieren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="einhundertneun" value="2"> Orthogonale Projektion
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertzehn" value="2"> Gramm-Schmidt-Verfahren
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertelf" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked name="einhundertzwölf" value="2"> Orthogonalität von f
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertdreizehn" value="2"> Orthogonale Gruppe
+        </label>
+        <br>
+        <h3> Riez Iso</h3>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertvierzehn" value="2"> Riez-Iso
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertfünfzehn" value="2"> Adjungierte Homs
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertsechzehn" value="2"> Fundamentale Unterräume
+        </label>
+        <br>
+        <h3> Kommende Themen</h3>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertsiebzehn" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertachtzehn" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertneunzehn" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertzwanzig" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhunderteinundzwanzig" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox"checked  name="einhundertzweiundzwanzig" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" checked name="einhundertdreiundzwanzig" value="2"> Orthognale Abbildungen
+        </label>
+        <br>
+        <div class="button"> 
+        <button class="button-18" onclick="generatePDF()" type="button">Generate Cheatsheet</button>
+        </div>
+
+
+        </div>
+        
+        
+    </form>
+
+    <script>
+        function generatePDF() {
+            const form = document.getElementById("titleForm");
+            const formData = new FormData(form);
+            const datareal = {};
+            for (const [key, value] of formData.entries()) {
+            datareal[key] = value;
+            }
+            const datareal2 = JSON.stringify(datareal);
+            console.log(datareal2);
+            fetch('/generate-pdf', { method: 'POST', body: datareal2,  headers: {
+            "Content-type": "application/json; charset=UTF-8"
+             } 
+            })
+            .then(response => {
+                window.location.href = '/generate-pdf2';
+
+            })
+    
+
+            ;
+            //window.location.href = '/generate-pdf';
+            //window.location.href = '/generate-pdf?data=' + encodeURIComponent(datareal2);
+        };
+    </script>
+    
+      
+</body>
+</html>
+
